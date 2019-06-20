@@ -32,12 +32,12 @@
 //   localStorage.setItem("aceitouSalvar", aceitouSalvar);
 // }
 
-
-
-let aceitouSalvar = JSON.parse(localStorage.getItem("aceitouSalvar"));
+import aceitouSalvar from '/scripts/_storage/aceitouSalvar.js'
 
 if(aceitouSalvar === null) {
-  aceitouSalvar = confirm('Você aceita que a gente salve as suas informações?');
+  // shadowing / sombra do módulo
+  // redeclarando com o mesmo nome
+  const aceitouSalvar = confirm('Você aceita que a gente salve as suas informações?');
   if(!aceitouSalvar) {
     alert('Você pode mudar isso na página de configurações');
   }

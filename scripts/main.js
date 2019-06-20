@@ -1,2 +1,1 @@
-import './termosDeUso.js';
-import './pedePaginaInicial.js';
+import './_pedeInfos/index.js';
