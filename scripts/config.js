@@ -1,8 +1,8 @@
-import paginaInicial, { setPaginaInicial } from '/scripts/_storage/paginaInicial.js';
-import aceitouSalvar, { setAceitouSalvar } from '/scripts/_storage/aceitouSalvar.js';
+import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
+import * as storageAceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
 
-$inputPaginaInicial.value = paginaInicial;
-$inputPermissao.checked = aceitouSalvar;
+$inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
+$inputPermissao.checked = storageAceitouSalvar.aceitouSalvar;
 
 // o que vai ser executado quando clicar
 // o que vai ser executado quando o evento de click acontecer
@@ -11,6 +11,8 @@ $btnSalvar.onclick = salvar;
 
 // função de callback
 function salvar() {
-  setAceitouSalvar($inputPermissao.checked);
-  setPaginaInicial($inputPaginaInicial.value);
+  storageAceitouSalvar.setAceitouSalvar($inputPermissao.checked);
+  storagePaginaInicial.setPaginaInicial($inputPaginaInicial.value);
 }
+
+$inputSettings.value = 'cake://settings'

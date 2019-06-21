@@ -18,12 +18,12 @@
 // retorna o valor digitado
 
 
-import aceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
-import paginaInicial, { setPaginaInicial } from '/scripts/_storage/paginaInicial.js';
+import { aceitouSalvar as storageAceitouSalvar } from '/scripts/_storage/aceitouSalvar.js';
+import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
 
-if(aceitouSalvar === null || aceitouSalvar == true) {
+if(storageAceitouSalvar === null || storageAceitouSalvar === true) {
 	// sem shadowing
-	let paginaInicialDefault = paginaInicial;
+	let paginaInicialDefault = storagePaginaInicial.paginaInicial;
 	
 	// if (paginaInicial == null) => best practices
 	if (!paginaInicialDefault) {
@@ -38,7 +38,7 @@ if(aceitouSalvar === null || aceitouSalvar == true) {
 		$janelaPrincipal.src = paginaInicialDefault;
 		$inputEndereco.value = paginaInicialDefault;
 
-		setPaginaInicial(paginaInicialDefault);
+		storagePaginaInicial.setPaginaInicial(paginaInicialDefault);
 	}
 }
 

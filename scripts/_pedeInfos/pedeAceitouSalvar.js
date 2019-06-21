@@ -32,18 +32,18 @@
 //   localStorage.setItem("aceitouSalvar", aceitouSalvar);
 // }
 
-import aceitouSalvar, { setAceitouSalvar } from '/scripts/_storage/aceitouSalvar.js'
+import * as storageAceitouSalvar from '/scripts/_storage/aceitouSalvar.js'
 
-if(aceitouSalvar === null) {
+if(storageAceitouSalvar.aceitouSalvar === null) {
   // shadowing / sombra do módulo
   // redeclarando com o mesmo nome
   const aceitouSalvar = confirm('Você aceita que a gente salve as suas informações?');
   if(!aceitouSalvar) {
     alert('Você pode mudar isso na página de configurações');
   }
-  setAceitouSalvar(aceitouSalvar);
+  storageAceitouSalvar.setAceitouSalvar(aceitouSalvar);
 }
 
-export default aceitouSalvar
+export default storageAceitouSalvar.aceitouSalvar
 
 

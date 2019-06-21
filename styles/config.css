@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  max-width: 100%;
+}
+
+.pageSettings {
+  width: 80%;
+  margin: 0 auto;
+}
+header>input[type="image"] {
+  padding: 0;
+  margin-left: 0;
+}
