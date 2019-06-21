@@ -32,7 +32,7 @@
 //   localStorage.setItem("aceitouSalvar", aceitouSalvar);
 // }
 
-import aceitouSalvar from '/scripts/_storage/aceitouSalvar.js'
+import aceitouSalvar, { setAceitouSalvar } from '/scripts/_storage/aceitouSalvar.js'
 
 if(aceitouSalvar === null) {
   // shadowing / sombra do módulo
@@ -41,7 +41,7 @@ if(aceitouSalvar === null) {
   if(!aceitouSalvar) {
     alert('Você pode mudar isso na página de configurações');
   }
-  localStorage.setItem("aceitouSalvar", aceitouSalvar);
+  setAceitouSalvar(aceitouSalvar);
 }
 
 export default aceitouSalvar

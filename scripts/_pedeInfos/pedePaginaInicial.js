@@ -19,7 +19,7 @@
 
 
 import aceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
-import paginaInicial from '/scripts/_storage/paginaInicial.js';
+import paginaInicial, { setPaginaInicial } from '/scripts/_storage/paginaInicial.js';
 
 if(aceitouSalvar === null || aceitouSalvar == true) {
 	// sem shadowing
@@ -37,7 +37,8 @@ if(aceitouSalvar === null || aceitouSalvar == true) {
 	
 		$janelaPrincipal.src = paginaInicialDefault;
 		$inputEndereco.value = paginaInicialDefault;
-		localStorage.setItem('paginaInicial', paginaInicialDefault);
+
+		setPaginaInicial(paginaInicialDefault);
 	}
 }
 
