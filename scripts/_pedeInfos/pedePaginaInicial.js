@@ -20,6 +20,7 @@
 
 import { aceitouSalvar as storageAceitouSalvar } from '/scripts/_storage/aceitouSalvar.js';
 import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
+import { formataEndereco } from '/scripts/_utils/formataEndereco.js';
 
 if(storageAceitouSalvar === null || storageAceitouSalvar === true) {
 	// sem shadowing
@@ -31,14 +32,13 @@ if(storageAceitouSalvar === null || storageAceitouSalvar === true) {
 	}
 	
 	if(paginaInicialDefault) {
-		if( paginaInicialDefault.substring(0, 7) !== 'http://' && paginaInicialDefault.substring(0, 8) !== 'https://' ) {
-			paginaInicialDefault = 'http://' + paginaInicialDefault;
-		}
+		
+		const enderecoCompleto = formataEndereco(paginaInicialDefault);
 	
-		$janelaPrincipal.src = paginaInicialDefault;
-		$inputEndereco.value = paginaInicialDefault;
+		$janelaPrincipal.src = enderecoCompleto;
+		$inputEndereco.value = enderecoCompleto;
 
-		storagePaginaInicial.setPaginaInicial(paginaInicialDefault);
+		storagePaginaInicial.setPaginaInicial(enderecoCompleto);
 	}
 }
 

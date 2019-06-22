@@ -39,9 +39,12 @@ if(storageAceitouSalvar.aceitouSalvar === null) {
   // redeclarando com o mesmo nome
   const aceitouSalvar = confirm('Você aceita que a gente salve as suas informações?');
   if(!aceitouSalvar) {
-    alert('Você pode mudar isso na página de configurações');
+    alert('Você pode mudar isso na página de configurações quando quiser');
   }
-  storageAceitouSalvar.setAceitouSalvar(aceitouSalvar);
+
+  const funcaoSalvar = aceitouSalvar === true ? storageAceitouSalvar.setAceitou : storageAceitouSalvar.setNegou;
+
+  funcaoSalvar();
 }
 
 export default storageAceitouSalvar.aceitouSalvar
