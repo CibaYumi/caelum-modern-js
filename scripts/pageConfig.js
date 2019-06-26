@@ -1,7 +1,7 @@
 import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
 import * as storageAceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
 
-import { formataEndereco } from '/scripts/_utils/formataEndereco.js';
+import { formataEndereco } from './endereco/formataEndereco.js';
 
 $inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
 $inputPermissao.checked = storageAceitouSalvar.aceitouSalvar;
@@ -25,3 +25,23 @@ function salvar() {
   storagePaginaInicial.setPaginaInicial(enderecoCompleto);
 }
 
+$btnLimpaTudo.addEventListener('click', function(){
+  const chavesPermanentes = [
+    'aceitouSalvar',
+    'aceitouTermosDeUso'
+  ];
+
+  const listaChavesLocalStorage = Object.keys(localStorage);
+  for(let chave of listaChavesLocalStorage){
+    const isChavePermanente = chavesPermanentes.includes(chave);
+    
+    if(!isChavePermanente){
+      localStorage.removeItem(chave);
+    };
+  };
+
+  const listaChavesSessionStorage = Object.keys(sessionStorage);
+  for(let chave of listaChavesSessionStorage){
+    sessionStorage.removeItem(chave);
+  };
+});

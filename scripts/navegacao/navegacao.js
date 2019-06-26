@@ -1,5 +1,5 @@
 import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
-import { formataEndereco } from '/scripts/_utils/formataEndereco.js';
+import { formataEndereco } from '../endereco/formataEndereco.js';
 
 const paginaAtual = localStorage.getItem('paginaAtual');
 
