@@ -1,6 +1,6 @@
-import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js'
-import { formataEndereco } from '/scripts/endereco/formataEndereco.js'
-import { carregar } from '/scripts/navegacao/carregar.js'
+import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
+import { formataEndereco } from '/scripts/endereco/formataEndereco.js';
+import { carregar } from '/scripts/navegacao/carregar.js';
 
 import * as historico from '/scripts/navegacao/historico.js';
 

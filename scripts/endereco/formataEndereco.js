@@ -6,4 +6,4 @@ function formataEndereco(enderecoParaFormatar){
   return enderecoParaFormatar;
 }
 
-export { formataEndereco }
+export { formataEndereco };

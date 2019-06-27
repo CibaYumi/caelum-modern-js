@@ -1,6 +1,5 @@
 import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
 import * as storageAceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
-
 import { formataEndereco } from './endereco/formataEndereco.js';
 
 $inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
@@ -28,7 +27,7 @@ function salvar() {
 $btnLimpaTudo.addEventListener('click', function(){
   const chavesPermanentes = [
     'aceitouSalvar',
-    'aceitouTermosDeUso'
+    'aceitouTermos'
   ];
 
   const listaChavesLocalStorage = Object.keys(localStorage);
