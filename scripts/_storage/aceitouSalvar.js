@@ -14,14 +14,14 @@ function setAceitou(){
   setAceitouSalvar(true);
 };
 
-function setNegou(){
+function setNaoAceitou(){
   setAceitouSalvar(false);
 };
 
 export {
   aceitouSalvar,
   setAceitou,
-  setNegou
+  setNaoAceitou
 };
 
 /*
