@@ -1,6 +1,5 @@
 import * as storagePaginaInicial from '/scripts/_storage/paginaInicial.js';
 import * as storageAceitouSalvar from '/scripts/_storage/aceitouSalvar.js';
-import { formataEndereco } from './endereco/formataEndereco.js';
 
 $inputPaginaInicial.value = storagePaginaInicial.paginaInicial;
 $inputPermissao.checked = storageAceitouSalvar.aceitouSalvar;
@@ -17,7 +16,7 @@ function salvar() {
 
   funcaoEscolhida();
 
-  const enderecoCompleto = formataEndereco($inputPaginaInicial.value);
+  const enderecoCompleto = new Endereco($inputPaginaInicial.value);
 
   $inputPaginaInicial.value = enderecoCompleto;
 

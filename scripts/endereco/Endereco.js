@@ -46,11 +46,21 @@ function Endereco(endereco) {
     this.urlCompleta = enderecoCompleto;
     this.urlResumida = enderecoResumido;
 
+    this.toString = function() {
+      return this.urlCompleta;
+    }
+
   // Objeto literal - literal object
   // return {
   //   urlCompleta: enderecoCompleto,
   //   urlResumida: enderecoResumido
   // };
+
+  Endereco.prototype = {
+    .toString = function() {
+      return this.urlCompleta;
+  }
+
 };
 
 export { Endereco };
